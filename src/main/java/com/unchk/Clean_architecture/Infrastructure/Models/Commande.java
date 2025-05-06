@@ -1,13 +1,11 @@
 package com.unchk.Clean_architecture.Infrastructure.Models;
 
 import com.unchk.Clean_architecture.Domain.Enum.CommandStatus;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -20,5 +18,7 @@ public class Commande extends AbstractModel{
     private Date date_comande;
     private Integer qty;
     private CommandStatus status;
+    @OneToMany(mappedBy = "commande")
+    private List<DetailsCommande> detailsCommandes;
 
 }

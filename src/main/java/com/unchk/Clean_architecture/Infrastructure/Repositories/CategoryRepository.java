@@ -18,9 +18,9 @@ public class CategoryRepository implements CategoryRepositoryInterface {
 
         return this.categoryJPaRepository.findAll().stream().map(model ->{
             Category category = new Category();
-            category.setName(model.getName());
-            category.setImage(model.getImage());
-            category.setId(model.getId());
+            category.setName("Test");
+            category.setImage("https://placehold.co/600x400");
+            category.setId(1L);
 //            category.setCreatedAt(model.getCreatedAt());
 //            category.setUpdatedAt(model.getUpdatedAt());
             return category;

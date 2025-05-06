@@ -1,11 +1,10 @@
 package com.unchk.Clean_architecture.Infrastructure.Models;
 
 import com.unchk.Clean_architecture.Domain.Enum.TypeUser;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Entity
 @Data
@@ -20,4 +19,6 @@ public class User extends AbstractModel{
     private String email;
     private String password;
     private TypeUser type;
+    @OneToMany(mappedBy = "user")
+    private List<Panier> panier;
 }

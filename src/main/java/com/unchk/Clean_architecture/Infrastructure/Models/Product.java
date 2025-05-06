@@ -21,8 +21,12 @@ public class Product extends AbstractModel{
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
     private Category category;
-    @ManyToMany(mappedBy = "products")
-    private List<Panier> paniers;
+//    @ManyToMany(mappedBy = "products")
+//    private List<Panier> paniers;
+    @OneToMany(mappedBy = "product")
+    private List<PanierProduct> panierProduct;
+    @OneToMany(mappedBy = "product")
+    private List<DetailsCommande> detailsCommandes;
 
 
 }

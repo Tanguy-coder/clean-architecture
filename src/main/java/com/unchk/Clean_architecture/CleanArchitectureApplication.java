@@ -1,6 +1,8 @@
 package com.unchk.Clean_architecture;
 
 import com.unchk.Clean_architecture.Domain.Ports.CategoryService.CategoryInterface;
+import com.unchk.Clean_architecture.Domain.Presenter.CategoryPresenter;
+import com.unchk.Clean_architecture.Domain.Presenter.CategoryPresenterInterface;
 import com.unchk.Clean_architecture.Domain.Response.CategoryListResponse;
 import com.unchk.Clean_architecture.Domain.UseCase.CategoryListUseCase;
 import com.unchk.Clean_architecture.Infrastructure.Adapter.CategoryService;
@@ -32,5 +34,10 @@ public class CleanArchitectureApplication {
 	public CategoryRepository categoryRepository(CategoryJPaRepository categoryJPaRepository){
 		return new CategoryRepository(categoryJPaRepository);
 	}
+
+//	@Bean
+//	public CategoryPresenter categoryPresenter(){
+//		return new CategoryPresenter();
+//	}
 
 }
